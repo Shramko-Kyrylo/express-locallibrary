@@ -10,14 +10,21 @@ const catalogRouter = require("./routes/catalog"); //Import routes for "catalog"
 const compression = require("compression");
 const helmet = require("helmet");
 
+const cors = require("cors");
+
+const corsOptions = {
+  origin: "http://localhost:3000",
+};
+
 var app = express();
 
+app.use(cors(corsOptions));
 
 // Set up rate limiter: maximum of twenty requests per minute
 const RateLimit = require("express-rate-limit");
 const limiter = RateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
-  max: 40,
+  max: 300,
 });
 // Apply rate limiter to all requests
 app.use(limiter);
@@ -35,11 +42,12 @@ app.use(
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-// const mongoDB = "mongodb+srv://dovhinkabohdan:q6AN0XgrdLqata2c@cluster0.gnc9ivv.mongodb.net/local_library?retryWrites=true&w=majority&appName=Cluster0";
+//const mongoDB = "mongodb+srv://dovhinkabohdan:q6AN0XgrdLqata2c@cluster0.gnc9ivv.mongodb.net/local_library?retryWrites=true&w=majority&appName=Cluster0";
 
 const dev_db_url =
-  "mongodb+srv://dovhinkabohdan:q6AN0XgrdLqata2c@cluster0.gnc9ivv.mongodb.net/local_library?retryWrites=true&w=majority&appName=Cluster0";
+"mongodb+srv://dovhinkabohdan:q6AN0XgrdLqata2c@cluster0.gnc9ivv.mongodb.net/local_library?retryWrites=true&w=majority&appName=Cluster0";
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
+
 
 main().catch((err) => console.log(err));
 async function main() {
@@ -54,15 +62,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(compression()); // Compress all routes
+app.use(compression()); //Compress all routes
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/cool', usersRouter);
-app.use("/catalog", catalogRouter); // Add catalog routes to middleware chain.
+app.use('/catalog', catalogRouter); // Add catalog routes to middleware chain.
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -77,7 +84,10 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  // res.render('error');
+
+  res.json({status: err.status, message: err.message});
 });
+
 
 module.exports = app;

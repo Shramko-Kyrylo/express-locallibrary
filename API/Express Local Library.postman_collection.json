@@ -1,0 +1,992 @@
+{
+	"info": {
+		"_postman_id": "ab8efa27-83c9-493e-a066-54154e603d26",
+		"name": "Express Local Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34109969"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Book List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}books",
+							"host": [
+								"{{URL}}books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/book/65e82d7f5c070e428ae87c0e",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"book",
+								"65e82d7f5c070e428ae87c0e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Book Details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/book/65e82d7f5c070e428ae87c0e",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"book",
+										"65e82d7f5c070e428ae87c0e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "40"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "39"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 19:23:23 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1714850664"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "script-src 'self' code.jquery.com cdn.jsdelivr.net;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4aa-/7gODvGbgUUI+9dYQw1BQ0PV+Ak\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"book\": {\n        \"_id\": \"65e82d7f5c070e428ae87c0e\",\n        \"title\": \"Apes and Angels\",\n        \"author\": {\n            \"_id\": \"65e82d7b5c070e428ae87c02\",\n            \"first_name\": \"Ben\",\n            \"family_name\": \"Bova\",\n            \"date_of_birth\": \"1932-11-07T21:00:00.000Z\",\n            \"__v\": 0\n        },\n        \"summary\": \"Humankind headed out to the stars not for conquest, nor exploration, nor even for curiosity. Humans went to the stars in a desperate crusade to save intelligent life wherever they found it. A wave of death is spreading through the Milky Way galaxy, an expanding sphere of lethal gamma ...\",\n        \"isbn\": \"9780765379528\",\n        \"genre\": [\n            {\n                \"_id\": \"65e82d785c070e428ae87bfc\",\n                \"name\": \"Science Fiction\",\n                \"__v\": 0\n            }\n        ],\n        \"__v\": 0\n    },\n    \"book_instances\": [\n        {\n            \"_id\": \"65e82d835c070e428ae87c1c\",\n            \"book\": \"65e82d7f5c070e428ae87c0e\",\n            \"imprint\": \"New York Tom Doherty Associates, 2016.\",\n            \"status\": \"Available\",\n            \"due_back\": \"2024-03-06T08:46:59.928Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c1d\",\n            \"book\": \"65e82d7f5c070e428ae87c0e\",\n            \"imprint\": \"New York Tom Doherty Associates, 2016.\",\n            \"status\": \"Available\",\n            \"due_back\": \"2024-03-06T08:46:59.929Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c1e\",\n            \"book\": \"65e82d7f5c070e428ae87c0e\",\n            \"imprint\": \"New York Tom Doherty Associates, 2016.\",\n            \"status\": \"Available\",\n            \"due_back\": \"2024-03-06T08:46:59.929Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Book Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"7 days to hell\",\r\n    \"summary\": \"A gripping thriller that will keep you on the edge of your seat for seven days straight.\",\r\n    \"isbn\": \"978-1234567890\",\r\n    \"author\": \"663e6f8fae54975ced764b3c\" \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}book/create",
+							"host": [
+								"{{URL}}book"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"7 days to hell!\",\r\n    \"author\": {\r\n        \"first_name\": \"Bohdan\",\r\n        \"family_name\": \"Asimov\",\r\n        \"date_of_birth\": \"2001-07-16T00:00:00.000Z\",\r\n        \"date_of_death\": \"2023-04-06T00:00:00.000Z\"\r\n    },\r\n    \"summary\": \"A thrilling novel about...\",\r\n    \"isbn\": \"1234567890\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/book/6640c3e87c99ec19813f0e8d/update",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"book",
+								"6640c3e87c99ec19813f0e8d",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "Author List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/authors",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Author Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/author/65e82d7b5c070e428ae87c04",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"author",
+								"65e82d7b5c070e428ae87c04"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/author/65e82d7b5c070e428ae87c04",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"author",
+										"65e82d7b5c070e428ae87c04"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "40"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "36"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 19:24:55 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1714850734"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "script-src 'self' code.jquery.com cdn.jsdelivr.net;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"73-jsrcZTaI2cPXe8vpY52WdvyHgq4\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"author\": {\n        \"_id\": \"65e82d7b5c070e428ae87c04\",\n        \"first_name\": \"Bob\",\n        \"family_name\": \"Billings\",\n        \"__v\": 0\n    },\n    \"author_books\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Author Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n            \"first_name\": \"Bohdan\",\r\n            \"family_name\": \"Asimov\",\r\n            \"date_of_birth\": \"2001-07-16T00:00:00.000Z\",\r\n            \"date_of_death\": \"2023-04-06T00:00:00.000Z\",\r\n            \"__v\": 0\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}author/create",
+							"host": [
+								"{{URL}}author"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Author Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n            \"first_name\": \"Bohdan\",\r\n            \"family_name\": \"Asimov\",\r\n            \"date_of_birth\": \"2001-07-16T00:00:00.000Z\",\r\n            \"date_of_death\": \"2023-04-06T00:00:00.000Z\",\r\n            \"__v\": 0\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}author/create",
+									"host": [
+										"{{URL}}author"
+									],
+									"path": [
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "40"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "38"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 May 2024 12:31:33 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1715517153"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "script-src 'self' code.jquery.com cdn.jsdelivr.net;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "226"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e2-uaoVg01WMN8ZGWwDtytraqh2VAE\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Author Detail\",\n    \"author\": {\n        \"_id\": \"6640b6a449360c3757aa4517\",\n        \"first_name\": \"Bohdan\",\n        \"family_name\": \"Asimov\",\n        \"date_of_birth\": \"2001-07-16T00:00:00.000Z\",\n        \"date_of_death\": \"2023-04-06T00:00:00.000Z\",\n        \"__v\": 0\n    },\n    \"author_books\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Author Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n            \"first_name\": \"Michael\",\r\n            \"family_name\": \"King\",\r\n            \"date_of_birth\": \"1989-12-16T00:00:00.000Z\",\r\n            \"date_of_death\": \"2023-11-06T00:00:00.000Z\",\r\n            \"__v\": 0\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/author/663e6fabae54975ced764b40/update",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"author",
+								"663e6fabae54975ced764b40",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n            \"first_name\": \"Michael\",\r\n            \"family_name\": \"King\",\r\n            \"date_of_birth\": \"1989-12-16T00:00:00.000Z\",\r\n            \"date_of_death\": \"2023-11-06T00:00:00.000Z\",\r\n            \"__v\": 0\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/author/663e6fabae54975ced764b40/update",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"author",
+										"663e6fabae54975ced764b40",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "40"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "39"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 May 2024 14:08:12 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1715522953"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "script-src 'self' code.jquery.com cdn.jsdelivr.net;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "215"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d7-W/K/4KkFbU45BgbKOdVKXSIz1Pk\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Author updated successfully\",\n    \"author\": {\n        \"first_name\": \"Michael\",\n        \"family_name\": \"King\",\n        \"date_of_birth\": \"1989-12-16T00:00:00.000Z\",\n        \"date_of_death\": \"2023-11-06T00:00:00.000Z\",\n        \"_id\": \"663e6fabae54975ced764b40\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "BookInstance",
+			"item": [
+				{
+					"name": "Bookinstances List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/bookinstances",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"bookinstances"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Bookinstances List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/bookinstances",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"bookinstances"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "40"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "39"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 May 2024 14:09:58 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1715523059"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "script-src 'self' code.jquery.com cdn.jsdelivr.net;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f8f-W7D74bELLykzSjfUrxDINh32jG4\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Book Instance List\",\n    \"bookinstance_list\": [\n        {\n            \"_id\": \"65e82d835c070e428ae87c1b\",\n            \"book\": {\n                \"_id\": \"65e82d7f5c070e428ae87c0d\",\n                \"title\": \"The Slow Regard of Silent Things (Kingkiller Chronicle)\",\n                \"author\": \"65e82d7b5c070e428ae87c01\",\n                \"summary\": \"Deep below the University, there is a dark place. Few people know of it: a broken web of ancient passageways and abandoned rooms. A young woman lives there, tucked among the sprawling tunnels of the Underthing, snug in the heart of this forgotten place.\",\n                \"isbn\": \"9780756411336\",\n                \"genre\": [\n                    \"65e82d785c070e428ae87bfb\"\n                ],\n                \"__v\": 0\n            },\n            \"imprint\": \" Gollancz, 2015.\",\n            \"status\": \"Maintenance\",\n            \"due_back\": \"2024-03-06T08:46:59.928Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c19\",\n            \"book\": {\n                \"_id\": \"65e82d7f5c070e428ae87c0b\",\n                \"title\": \"The Name of the Wind (The Kingkiller Chronicle, #1)\",\n                \"author\": \"65e82d7b5c070e428ae87c01\",\n                \"summary\": \"I have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life. I was expelled from the University at a younger age than most people are allowed in. I tread paths by moonlight that others fear to speak of during day. I have talked to Gods, loved women, and written songs that make the minstrels weep.\",\n                \"isbn\": \"9781473211896\",\n                \"genre\": [\n                    \"65e82d785c070e428ae87bfb\"\n                ],\n                \"__v\": 0\n            },\n            \"imprint\": \"London Gollancz, 2014.\",\n            \"status\": \"Available\",\n            \"due_back\": \"2024-03-06T08:46:59.926Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c1a\",\n            \"book\": {\n                \"_id\": \"65e82d7f5c070e428ae87c0c\",\n                \"title\": \"The Wise Man's Fear (The Kingkiller Chronicle, #2)\",\n                \"author\": \"65e82d7b5c070e428ae87c01\",\n                \"summary\": \"Picking up the tale of Kvothe Kingkiller once again, we follow him into exile, into political intrigue, courtship, adventure, love and magic... and further along the path that has turned Kvothe, the mightiest magician of his age, a legend in his own time, into Kote, the unassuming pub landlord.\",\n                \"isbn\": \"9788401352836\",\n                \"genre\": [\n                    \"65e82d785c070e428ae87bfb\"\n                ],\n                \"__v\": 0\n            },\n            \"imprint\": \" Gollancz, 2011.\",\n            \"status\": \"Loaned\",\n            \"due_back\": \"2024-03-06T08:46:59.927Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c1f\",\n            \"book\": {\n                \"_id\": \"65e82d7f5c070e428ae87c0f\",\n                \"title\": \"Death Wave\",\n                \"author\": \"65e82d7b5c070e428ae87c02\",\n                \"summary\": \"In Ben Bova&#x27;s previous novel New Earth, Jordan Kell led the first human mission beyond the solar system. They discovered the ruins of an ancient alien civilization. But one alien AI survived, and it revealed to Jordan Kell that an explosion in the black hole at the heart of the Milky Way galaxy has created a wave of deadly radiation, expanding out from the core toward Earth. Unless the human race acts to save itself, all life on Earth will be wiped out...\",\n                \"isbn\": \"9780765379507\",\n                \"genre\": [\n                    \"65e82d785c070e428ae87bfc\"\n                ],\n                \"__v\": 0\n            },\n            \"imprint\": \"New York, NY Tom Doherty Associates, LLC, 2015.\",\n            \"status\": \"Available\",\n            \"due_back\": \"2024-03-06T08:46:59.929Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c1d\",\n            \"book\": {\n                \"_id\": \"65e82d7f5c070e428ae87c0e\",\n                \"title\": \"Apes and Angels\",\n                \"author\": \"65e82d7b5c070e428ae87c02\",\n                \"summary\": \"Humankind headed out to the stars not for conquest, nor exploration, nor even for curiosity. Humans went to the stars in a desperate crusade to save intelligent life wherever they found it. A wave of death is spreading through the Milky Way galaxy, an expanding sphere of lethal gamma ...\",\n                \"isbn\": \"9780765379528\",\n                \"genre\": [\n                    \"65e82d785c070e428ae87bfc\"\n                ],\n                \"__v\": 0\n            },\n            \"imprint\": \"New York Tom Doherty Associates, 2016.\",\n            \"status\": \"Available\",\n            \"due_back\": \"2024-03-06T08:46:59.929Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c1c\",\n            \"book\": {\n                \"_id\": \"65e82d7f5c070e428ae87c0e\",\n                \"title\": \"Apes and Angels\",\n                \"author\": \"65e82d7b5c070e428ae87c02\",\n                \"summary\": \"Humankind headed out to the stars not for conquest, nor exploration, nor even for curiosity. Humans went to the stars in a desperate crusade to save intelligent life wherever they found it. A wave of death is spreading through the Milky Way galaxy, an expanding sphere of lethal gamma ...\",\n                \"isbn\": \"9780765379528\",\n                \"genre\": [\n                    \"65e82d785c070e428ae87bfc\"\n                ],\n                \"__v\": 0\n            },\n            \"imprint\": \"New York Tom Doherty Associates, 2016.\",\n            \"status\": \"Available\",\n            \"due_back\": \"2024-03-06T08:46:59.928Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c1e\",\n            \"book\": {\n                \"_id\": \"65e82d7f5c070e428ae87c0e\",\n                \"title\": \"Apes and Angels\",\n                \"author\": \"65e82d7b5c070e428ae87c02\",\n                \"summary\": \"Humankind headed out to the stars not for conquest, nor exploration, nor even for curiosity. Humans went to the stars in a desperate crusade to save intelligent life wherever they found it. A wave of death is spreading through the Milky Way galaxy, an expanding sphere of lethal gamma ...\",\n                \"isbn\": \"9780765379528\",\n                \"genre\": [\n                    \"65e82d785c070e428ae87bfc\"\n                ],\n                \"__v\": 0\n            },\n            \"imprint\": \"New York Tom Doherty Associates, 2016.\",\n            \"status\": \"Available\",\n            \"due_back\": \"2024-03-06T08:46:59.929Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c23\",\n            \"book\": {\n                \"_id\": \"65e82d7f5c070e428ae87c0c\",\n                \"title\": \"The Wise Man's Fear (The Kingkiller Chronicle, #2)\",\n                \"author\": \"65e82d7b5c070e428ae87c01\",\n                \"summary\": \"Picking up the tale of Kvothe Kingkiller once again, we follow him into exile, into political intrigue, courtship, adventure, love and magic... and further along the path that has turned Kvothe, the mightiest magician of his age, a legend in his own time, into Kote, the unassuming pub landlord.\",\n                \"isbn\": \"9788401352836\",\n                \"genre\": [\n                    \"65e82d785c070e428ae87bfb\"\n                ],\n                \"__v\": 0\n            },\n            \"imprint\": \"Imprint XXX3\",\n            \"status\": \"Maintenance\",\n            \"due_back\": \"2024-03-06T08:46:59.931Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c22\",\n            \"book\": {\n                \"_id\": \"65e82d7f5c070e428ae87c0b\",\n                \"title\": \"The Name of the Wind (The Kingkiller Chronicle, #1)\",\n                \"author\": \"65e82d7b5c070e428ae87c01\",\n                \"summary\": \"I have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life. I was expelled from the University at a younger age than most people are allowed in. I tread paths by moonlight that others fear to speak of during day. I have talked to Gods, loved women, and written songs that make the minstrels weep.\",\n                \"isbn\": \"9781473211896\",\n                \"genre\": [\n                    \"65e82d785c070e428ae87bfb\"\n                ],\n                \"__v\": 0\n            },\n            \"imprint\": \"Imprint XXX2\",\n            \"status\": \"Maintenance\",\n            \"due_back\": \"2024-03-06T08:46:59.931Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c21\",\n            \"book\": {\n                \"_id\": \"65e82d7f5c070e428ae87c0f\",\n                \"title\": \"Death Wave\",\n                \"author\": \"65e82d7b5c070e428ae87c02\",\n                \"summary\": \"In Ben Bova&#x27;s previous novel New Earth, Jordan Kell led the first human mission beyond the solar system. They discovered the ruins of an ancient alien civilization. But one alien AI survived, and it revealed to Jordan Kell that an explosion in the black hole at the heart of the Milky Way galaxy has created a wave of deadly radiation, expanding out from the core toward Earth. Unless the human race acts to save itself, all life on Earth will be wiped out...\",\n                \"isbn\": \"9780765379507\",\n                \"genre\": [\n                    \"65e82d785c070e428ae87bfc\"\n                ],\n                \"__v\": 0\n            },\n            \"imprint\": \"New York, NY Tom Doherty Associates, LLC, 2015.\",\n            \"status\": \"Loaned\",\n            \"due_back\": \"2024-04-13T00:00:00.000Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"65e82d835c070e428ae87c20\",\n            \"book\": {\n                \"_id\": \"65e82d7f5c070e428ae87c0f\",\n                \"title\": \"Death Wave\",\n                \"author\": \"65e82d7b5c070e428ae87c02\",\n                \"summary\": \"In Ben Bova&#x27;s previous novel New Earth, Jordan Kell led the first human mission beyond the solar system. They discovered the ruins of an ancient alien civilization. But one alien AI survived, and it revealed to Jordan Kell that an explosion in the black hole at the heart of the Milky Way galaxy has created a wave of deadly radiation, expanding out from the core toward Earth. Unless the human race acts to save itself, all life on Earth will be wiped out...\",\n                \"isbn\": \"9780765379507\",\n                \"genre\": [\n                    \"65e82d785c070e428ae87bfc\"\n                ],\n                \"__v\": 0\n            },\n            \"imprint\": \"New York, NY Tom Doherty Associates, LLC, 2015.\",\n            \"status\": \"Maintenance\",\n            \"due_back\": \"2024-03-06T08:46:59.930Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6640c6157c99ec19813f0e95\",\n            \"book\": {\n                \"_id\": \"6640c3e87c99ec19813f0e8d\",\n                \"title\": \"7 days to hell!\",\n                \"author\": \"663e6f8fae54975ced764b3c\",\n                \"summary\": \"A thrilling novel about...\",\n                \"isbn\": \"1234567890\",\n                \"genre\": [],\n                \"__v\": 0\n            },\n            \"imprint\": \"Ukraine, 2024\",\n            \"status\": \"Maintenance\",\n            \"due_back\": \"2024-03-06T00:00:00.000Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "BookInstance Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/bookinstance/65e82d835c070e428ae87c21",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"bookinstance",
+								"65e82d835c070e428ae87c21"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/bookinstance/65e82d835c070e428ae87c1a",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"bookinstance",
+										"65e82d835c070e428ae87c1a"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "40"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "36"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 19:27:18 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1714850846"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "script-src 'self' code.jquery.com cdn.jsdelivr.net;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "659"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"293-X4LV9GE1Ik/ysfM2uST5fsTZvlY\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"bookinstance\": {\n        \"_id\": \"65e82d835c070e428ae87c1a\",\n        \"book\": {\n            \"_id\": \"65e82d7f5c070e428ae87c0c\",\n            \"title\": \"The Wise Man's Fear (The Kingkiller Chronicle, #2)\",\n            \"author\": \"65e82d7b5c070e428ae87c01\",\n            \"summary\": \"Picking up the tale of Kvothe Kingkiller once again, we follow him into exile, into political intrigue, courtship, adventure, love and magic... and further along the path that has turned Kvothe, the mightiest magician of his age, a legend in his own time, into Kote, the unassuming pub landlord.\",\n            \"isbn\": \"9788401352836\",\n            \"genre\": [\n                \"65e82d785c070e428ae87bfb\"\n            ],\n            \"__v\": 0\n        },\n        \"imprint\": \" Gollancz, 2011.\",\n        \"status\": \"Loaned\",\n        \"due_back\": \"2024-03-06T08:46:59.927Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Bookinstance Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book\": \"6640c3e87c99ec19813f0e8d\",\r\n    \"imprint\": \"Ukraine, 2024\",\r\n    \"status\": \"Maintenance\",\r\n    \"due_back\": \"2024-03-06\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/bookinstance/create",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"bookinstance",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bookinstance Update",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book\": \"6640c3e87c99ec19813f0e8d\",\r\n    \"imprint\": \"Ukraine, 2024\",\r\n    \"status\": \"Done\",\r\n    \"due_back\": \"2024-05-11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/bookinstance/6640c6157c99ec19813f0e95/update",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"bookinstance",
+								"6640c6157c99ec19813f0e95",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book\": \"6640c3e87c99ec19813f0e8d\",\r\n    \"imprint\": \"Ukraine, 2024\",\r\n    \"status\": \"Done\",\r\n    \"due_back\": \"2024-05-11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/bookinstance/6640c6157c99ec19813f0e95/update",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"bookinstance",
+										"6640c6157c99ec19813f0e95",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "40"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "39"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 12 May 2024 14:12:16 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1715523197"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "script-src 'self' code.jquery.com cdn.jsdelivr.net;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "148"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"94-l3U4Gla1ylVTcrE3mx+tXeVUFC0\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"book\": \"6640c3e87c99ec19813f0e8d\",\n    \"imprint\": \"Ukraine, 2024\",\n    \"status\": \"Done\",\n    \"due_back\": \"2024-05-11T00:00:00.000Z\",\n    \"_id\": \"6640c6157c99ec19813f0e95\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Genre",
+			"item": [
+				{
+					"name": "Genre List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/genres",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Genre Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/genre/65e82d785c070e428ae87bfd",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"genre",
+								"65e82d785c070e428ae87bfd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/genre/65e82d785c070e428ae87bfd",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"genre",
+										"65e82d785c070e428ae87bfd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "40"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "39"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 19:31:39 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1714851160"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "script-src 'self' code.jquery.com cdn.jsdelivr.net;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "92"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c-J0mTq4lH2RZFs2Sik/Oeln8h5kU\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"genre\": {\n        \"_id\": \"65e82d785c070e428ae87bfd\",\n        \"name\": \"French Poetry\",\n        \"__v\": 0\n    },\n    \"genre_books\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Genre Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n            \"_id\": \"66013286d60ef8bc9493dz89\",\r\n            \"name\": \"Legend\",\r\n            \"__v\": 0\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}genre/create",
+							"host": [
+								"{{URL}}genre"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Genre Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}genre",
+							"host": [
+								"{{URL}}genre"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
